@@ -37,7 +37,7 @@ teste = [
 
     "1 + 2 + 3 + 4 + 5"
 ]
-prop = teste[4]
+prop = teste[-4]
 
 
 termen = [{'name': 'term_0', 'equals' : ['a', '+', 'b']}]

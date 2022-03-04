@@ -1,24 +1,24 @@
 digraph G {
 	subgraph cluster_1 {
-		"1_1_value_0" [label=a]
+		"1_1_value_0" [label=b]
 		label=Values
 	}
 	subgraph cluster_2 {
 		label=Instructions
 	}
-	"1_start_1" [label=< <FONT COLOR='BLUE' > We push variable: </FONT> <FONT COLOR='RED' > a </FONT> > shape=box]
+	"1_start_1" [label=< <FONT COLOR='BLUE' > We push variable: </FONT> <FONT COLOR='RED' > b </FONT> > shape=box]
 	"1_start_1" -> "1_1_value_0" [label="" color=transparent]
 	"1_end_1" [label="" color=transparent]
 	"1_1_value_0" -> "1_end_1" [label="" color=transparent]
 	subgraph cluster_4 {
-		"2_4_value_0" [label=a]
+		"2_4_value_0" [label=b]
 		label=Values
 	}
 	subgraph cluster_5 {
-		"2_5_instruction_0" [label="-\l1\r"]
+		"2_5_instruction_0" [label="*\l2\r"]
 		label=Instructions
 	}
-	"2_start_2" [label=< <FONT COLOR='BLUE' > We push the operator: </FONT> <FONT COLOR='RED'> - </FONT> > shape=box]
+	"2_start_2" [label=< <FONT COLOR='BLUE' > We push the operator: </FONT> <FONT COLOR='RED'> * </FONT> > shape=box]
 	"2_start_2" -> "2_4_value_0" [label="" color=transparent]
 	"2_start_2" -> "2_5_instruction_0" [label="" color=transparent]
 	"2_end_2" [label="" color=transparent]
@@ -26,12 +26,12 @@ digraph G {
 	"2_5_instruction_0" -> "2_end_2" [label="" color=transparent]
 	"1_end_1" -> "2_start_2" [label="" color=transparent]
 	subgraph cluster_7 {
-		"3_7_value_0" [label=a]
+		"3_7_value_0" [label=b]
 		label=Values
 	}
 	subgraph cluster_8 {
-		"3_8_instruction_0" [label="-\l1\r"]
-		"3_8_instruction_1" [label="-\l1\r"]
+		"3_8_instruction_0" [label="-\l101\r"]
+		"3_8_instruction_1" [label="*\l2\r"]
 		"3_8_instruction_0" -> "3_8_instruction_1"
 		label=Instructions
 	}
@@ -43,13 +43,13 @@ digraph G {
 	"3_8_instruction_1" -> "3_end_3" [label="" color=transparent]
 	"2_end_2" -> "3_start_3" [label="" color=transparent]
 	subgraph cluster_10 {
-		"4_10_value_0" [label=a]
+		"4_10_value_0" [label=b]
 		label=Values
 	}
 	subgraph cluster_11 {
-		"4_11_instruction_0" [label="-\l1\r"]
-		"4_11_instruction_1" [label="-\l1\r"]
-		"4_11_instruction_2" [label="-\l1\r"]
+		"4_11_instruction_0" [label="-\l101\r"]
+		"4_11_instruction_1" [label="-\l101\r"]
+		"4_11_instruction_2" [label="*\l2\r"]
 		"4_11_instruction_0" -> "4_11_instruction_1"
 		"4_11_instruction_1" -> "4_11_instruction_2"
 		label=Instructions
@@ -62,14 +62,14 @@ digraph G {
 	"4_11_instruction_2" -> "4_end_4" [label="" color=transparent]
 	"3_end_3" -> "4_start_4" [label="" color=transparent]
 	subgraph cluster_13 {
-		"5_13_value_0" [label=a]
+		"5_13_value_0" [label=b]
 		label=Values
 	}
 	subgraph cluster_14 {
-		"5_14_instruction_0" [label="-\l1\r"]
-		"5_14_instruction_1" [label="-\l1\r"]
-		"5_14_instruction_2" [label="-\l1\r"]
-		"5_14_instruction_3" [label="-\l1\r"]
+		"5_14_instruction_0" [label="-\l101\r"]
+		"5_14_instruction_1" [label="-\l101\r"]
+		"5_14_instruction_2" [label="-\l101\r"]
+		"5_14_instruction_3" [label="*\l2\r"]
 		"5_14_instruction_0" -> "5_14_instruction_1"
 		"5_14_instruction_1" -> "5_14_instruction_2"
 		"5_14_instruction_2" -> "5_14_instruction_3"
@@ -83,22 +83,22 @@ digraph G {
 	"5_14_instruction_3" -> "5_end_5" [label="" color=transparent]
 	"4_end_4" -> "5_start_5" [label="" color=transparent]
 	subgraph cluster_16 {
-		"6_16_value_0" [label=b]
-		"6_16_value_1" [label=a]
+		"6_16_value_0" [label=c]
+		"6_16_value_1" [label=b]
 		"6_16_value_0" -> "6_16_value_1"
 		label=Values
 	}
 	subgraph cluster_17 {
-		"6_17_instruction_0" [label="-\l1\r"]
-		"6_17_instruction_1" [label="-\l1\r"]
-		"6_17_instruction_2" [label="-\l1\r"]
-		"6_17_instruction_3" [label="-\l1\r"]
+		"6_17_instruction_0" [label="-\l101\r"]
+		"6_17_instruction_1" [label="-\l101\r"]
+		"6_17_instruction_2" [label="-\l101\r"]
+		"6_17_instruction_3" [label="*\l2\r"]
 		"6_17_instruction_0" -> "6_17_instruction_1"
 		"6_17_instruction_1" -> "6_17_instruction_2"
 		"6_17_instruction_2" -> "6_17_instruction_3"
 		label=Instructions
 	}
-	"6_start_6" [label=< <FONT COLOR='BLUE' > We push variable: </FONT> <FONT COLOR='RED' > b </FONT> > shape=box]
+	"6_start_6" [label=< <FONT COLOR='BLUE' > We push variable: </FONT> <FONT COLOR='RED' > c </FONT> > shape=box]
 	"6_start_6" -> "6_16_value_0" [label="" color=transparent]
 	"6_start_6" -> "6_17_instruction_0" [label="" color=transparent]
 	"6_end_6" [label="" color=transparent]
@@ -107,21 +107,21 @@ digraph G {
 	"5_end_5" -> "6_start_6" [label="" color=transparent]
 	subgraph cluster_19 {
 		"7_19_value_0" [label=term_1]
-		"7_19_value_1" [label=a]
+		"7_19_value_1" [label=b]
 		"7_19_value_0" -> "7_19_value_1"
 		label=Values
 	}
 	subgraph cluster_20 {
-		"7_20_instruction_0" [label="-\l1\r"]
-		"7_20_instruction_1" [label="-\l1\r"]
-		"7_20_instruction_2" [label="-\l1\r"]
+		"7_20_instruction_0" [label="-\l101\r"]
+		"7_20_instruction_1" [label="-\l101\r"]
+		"7_20_instruction_2" [label="*\l2\r"]
 		"7_20_instruction_0" -> "7_20_instruction_1"
 		"7_20_instruction_1" -> "7_20_instruction_2"
 		label=Instructions
 	}
 	"7_start_7" [label=< <FONT COLOR='BLUE' > No more operators to push, so we pop, and create a term </FONT> > shape=box]
 	"7_start_7" -> "7_19_value_0" [label="" color=transparent]
-	term_7 [label="term_1 = - b" shape=box]
+	term_7 [label="term_1 = - c" shape=box]
 	"7_start_7" -> term_7
 	"7_start_7" -> "7_20_instruction_0" [label="" color=transparent]
 	"7_end_7" [label="" color=transparent]
@@ -133,14 +133,14 @@ digraph G {
 		label=Values
 	}
 	subgraph cluster_23 {
-		"8_23_instruction_0" [label="-\l1\r"]
-		"8_23_instruction_1" [label="-\l1\r"]
+		"8_23_instruction_0" [label="-\l101\r"]
+		"8_23_instruction_1" [label="*\l2\r"]
 		"8_23_instruction_0" -> "8_23_instruction_1"
 		label=Instructions
 	}
 	"8_start_8" [label=< <FONT COLOR='BLUE' > No more operators to push, so we pop, and create a term </FONT> > shape=box]
 	"8_start_8" -> "8_22_value_0" [label="" color=transparent]
-	term_8 [label="term_2 = a - term_1" shape=box]
+	term_8 [label="term_2 = b - term_1" shape=box]
 	"8_start_8" -> term_8
 	"8_start_8" -> "8_23_instruction_0" [label="" color=transparent]
 	"8_end_8" [label="" color=transparent]
@@ -152,7 +152,7 @@ digraph G {
 		label=Values
 	}
 	subgraph cluster_26 {
-		"9_26_instruction_0" [label="-\l1\r"]
+		"9_26_instruction_0" [label="*\l2\r"]
 		label=Instructions
 	}
 	"9_start_9" [label=< <FONT COLOR='BLUE' > No more operators to push, so we pop, and create a term </FONT> > shape=box]
@@ -173,7 +173,7 @@ digraph G {
 	}
 	"10_start_10" [label=< <FONT COLOR='BLUE' > No more operators to push, so we pop, and create a term </FONT> > shape=box]
 	"10_start_10" -> "10_28_value_0" [label="" color=transparent]
-	term_10 [label="term_4 = - term_3" shape=box]
+	term_10 [label="term_4 = * term_3" shape=box]
 	"10_start_10" -> term_10
 	"10_end_10" [label="" color=transparent]
 	"10_28_value_0" -> "10_end_10" [label="" color=transparent]
@@ -186,14 +186,14 @@ digraph G {
 	Graph_2
 	"10_end_10" [label=< <FONT COLOR='BLUE' > Creating the graphs </FONT> > color=black]
 	"10_end_10" -> Graph_2
-	Graph_2_node_1 [label="-"]
+	Graph_2_node_1 [label="*"]
 	Graph_2 -> Graph_2_node_1
 	Graph_2_node_3 [label=term_3]
 	Graph_2_node_1 -> Graph_2_node_3
 	Graph_3
 	"10_end_10" [label=< <FONT COLOR='BLUE' > Creating the graphs </FONT> > color=black]
 	"10_end_10" -> Graph_3
-	Graph_3_node_1 [label="-"]
+	Graph_3_node_1 [label="*"]
 	Graph_3 -> Graph_3_node_1
 	Graph_3_node_3 [label="-"]
 	Graph_3_node_1 -> Graph_3_node_3
@@ -202,31 +202,31 @@ digraph G {
 	Graph_4
 	"10_end_10" [label=< <FONT COLOR='BLUE' > Creating the graphs </FONT> > color=black]
 	"10_end_10" -> Graph_4
-	Graph_4_node_1 [label="-"]
+	Graph_4_node_1 [label="*"]
 	Graph_4 -> Graph_4_node_1
 	Graph_4_node_3 [label="-"]
 	Graph_4_node_1 -> Graph_4_node_3
 	Graph_4_node_7 [label="-"]
 	Graph_4_node_3 -> Graph_4_node_7
-	Graph_4_node_14 [label=a]
+	Graph_4_node_14 [label=b]
 	Graph_4_node_7 -> Graph_4_node_14
 	Graph_4_node_15 [label=term_1]
 	Graph_4_node_7 -> Graph_4_node_15
 	Graph_5
 	"10_end_10" [label=< <FONT COLOR='BLUE' > Creating the graphs </FONT> > color=black]
 	"10_end_10" -> Graph_5
-	Graph_5_node_1 [label=< <FONT COLOR="RED"> 1) </FONT> - >]
+	Graph_5_node_1 [label=< <FONT COLOR="RED"> 1) </FONT> * >]
 	Graph_5 -> Graph_5_node_1
 	Graph_5_node_3 [label=< <FONT COLOR="RED"> 2) </FONT> - >]
 	Graph_5_node_1 -> Graph_5_node_3
 	Graph_5_node_7 [label=< <FONT COLOR="RED"> 3) </FONT> - >]
 	Graph_5_node_3 -> Graph_5_node_7
-	Graph_5_node_14 [label=< <FONT COLOR="RED"> 4) </FONT> a >]
+	Graph_5_node_14 [label=< <FONT COLOR="RED"> 4) </FONT> b >]
 	Graph_5_node_7 -> Graph_5_node_14
 	Graph_5_node_15 [label=< <FONT COLOR="RED"> 5) </FONT> - >]
 	Graph_5_node_7 -> Graph_5_node_15
-	Graph_5_node_31 [label=< <FONT COLOR="RED"> 6) </FONT> b >]
+	Graph_5_node_31 [label=< <FONT COLOR="RED"> 6) </FONT> c >]
 	Graph_5_node_15 -> Graph_5_node_31
-	polish [label="The polish notation in preorder is: ---a-b" shape=plaintext]
+	polish [label="The polish notation in preorder is: *--b-c" shape=plaintext]
 	Graph_5 -> polish
 }
