@@ -36,9 +36,11 @@ teste = [
     
     "( 1 + 2 ) * 3 + 4",
 
-    "1 + 2 + 3 + 4 + 5"
+    "1 + 2 + 3 + 4 + 5",
+
+    "a ^ c * ( b + n ^ p )"
 ]
-prop = teste[-4]
+prop = teste[-1]
 
 
 termen = [{'name': 'term_0', 'equals' : ['a', '+', 'b']}]
@@ -104,12 +106,21 @@ def generare_lista():
 last_end = ''
 def create_cluster(values: list, instructions: list, contor: int):
     # NOTE shape Msquare is used when an operator wants to join but his precendece doesn't allow it yet, so we proceed with popping operators
-
+    global first_thing
     global total_stacks
     total_stacks += 1
     global cluster
-    global first_thing
     cluster += 1
+
+    if first_thing == 0:
+        g.node("start_prop", f"Starting point is: {prop}", shape="box")
+        g.edge("start_prop", f'{contor}_start_{total_stacks}', label="", color="transparent")
+
+    first_thing += 1
+
+
+
+
     with g.subgraph(name=f'cluster_{cluster}') as c:
         edges = []
 
@@ -152,12 +163,8 @@ def create_cluster(values: list, instructions: list, contor: int):
     else:
         if last_pushed == "right":
             g.node(f'{contor}_start_{total_stacks}', f"< <FONT COLOR='BLUE' > We push the operator: </FONT> <FONT COLOR='RED'> {instructions[0]['operator']} </FONT> >", shape="box")
-        elif last_pushed == "left":
-            show_prop = ""
-            if first_thing == 0:
-                show_prop = f"Starting point is: {prop} <BR/> <BR/>"
-            g.node(f'{contor}_start_{total_stacks}', f"< {show_prop} <FONT COLOR='BLUE' > We push variable: </FONT> <FONT COLOR='RED' > {values[0]} </FONT> >" , shape="box")
-            first_thing = 1
+        elif last_pushed == "left":        
+            g.node(f'{contor}_start_{total_stacks}', f"< <FONT COLOR='BLUE' > We push variable: </FONT> <FONT COLOR='RED' > {values[0]} </FONT> >" , shape="box")
         else:
             g.node(f'{contor}_start_{total_stacks}')
 
