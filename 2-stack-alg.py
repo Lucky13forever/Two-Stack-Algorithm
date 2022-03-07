@@ -9,6 +9,7 @@ total_stacks = 0
 cluster = 0
 finished = 0
 last_pushed = ""
+first_thing = 0
 
 teste = [
     "a * ( b - c / d * e ) / f - g * h",
@@ -106,6 +107,7 @@ def create_cluster(values: list, instructions: list, contor: int):
     global total_stacks
     total_stacks += 1
     global cluster
+    global first_thing
     cluster += 1
     with g.subgraph(name=f'cluster_{cluster}') as c:
         edges = []
@@ -150,7 +152,11 @@ def create_cluster(values: list, instructions: list, contor: int):
         if last_pushed == "right":
             g.node(f'{contor}_start_{total_stacks}', f"< <FONT COLOR='BLUE' > We push the operator: </FONT> <FONT COLOR='RED'> {instructions[0]['operator']} </FONT> >", shape="box")
         elif last_pushed == "left":
-            g.node(f'{contor}_start_{total_stacks}', f"< <FONT COLOR='BLUE' > We push variable: </FONT> <FONT COLOR='RED' > {values[0]} </FONT> >" , shape="box")
+            show_prop = ""
+            if first_thing == 0:
+                show_prop = f"Starting point is: {prop} <BR/> <BR/>"
+            g.node(f'{contor}_start_{total_stacks}', f"< {show_prop} <FONT COLOR='BLUE' > We push variable: </FONT> <FONT COLOR='RED' > {values[0]} </FONT> >" , shape="box")
+            first_thing = 1
         else:
             g.node(f'{contor}_start_{total_stacks}')
 

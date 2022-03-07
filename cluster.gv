@@ -6,7 +6,7 @@ digraph G {
 	subgraph cluster_2 {
 		label=Instructions
 	}
-	"1_start_1" [label=< <FONT COLOR='BLUE' > We push variable: </FONT> <FONT COLOR='RED' > b </FONT> > shape=box]
+	"1_start_1" [label=< Starting point is: b * ( - - - c ) <BR/> <BR/> <FONT COLOR='BLUE' > We push variable: </FONT> <FONT COLOR='RED' > b </FONT> > shape=box]
 	"1_start_1" -> "1_1_value_0" [label="" color=transparent]
 	"1_end_1" [label="" color=transparent]
 	"1_1_value_0" -> "1_end_1" [label="" color=transparent]
@@ -98,7 +98,7 @@ digraph G {
 		"6_17_instruction_2" -> "6_17_instruction_3"
 		label=Instructions
 	}
-	"6_start_6" [label=< <FONT COLOR='BLUE' > We push variable: </FONT> <FONT COLOR='RED' > c </FONT> > shape=box]
+	"6_start_6" [label=<  <FONT COLOR='BLUE' > We push variable: </FONT> <FONT COLOR='RED' > c </FONT> > shape=box]
 	"6_start_6" -> "6_16_value_0" [label="" color=transparent]
 	"6_start_6" -> "6_17_instruction_0" [label="" color=transparent]
 	"6_end_6" [label="" color=transparent]
