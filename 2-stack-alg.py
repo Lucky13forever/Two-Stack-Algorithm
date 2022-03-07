@@ -67,10 +67,11 @@ precendence = {
     "not" : 3,
     "or" : 1,
     "and" : 2,
-    "¬" : 3,
-    "\/" : 1,
-    "^": 2,
+    "¬" : 4,
+    "\/" : 2,
+    "^": 3,
 }
+
 # pastrez fiecare termen intr-o lista
 def generare_lista():
     rez = []
