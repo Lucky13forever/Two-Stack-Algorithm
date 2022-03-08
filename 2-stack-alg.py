@@ -40,7 +40,7 @@ teste = [
 
     "a ^ c * ( b + n ^ p )"
 ]
-prop = teste[-1]
+prop = teste[-4]
 
 
 termen = [{'name': 'term_0', 'equals' : ['a', '+', 'b']}]
